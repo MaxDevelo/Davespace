@@ -11,7 +11,8 @@
             {{ encore_entry_script_tags('app') }}
             {% block importmap %}{{ importmap('app') }}{% endblock %}
 		</head>
-		<body>
+		<body class="bg-stone-800">
+            {% include 'components/_header.html.twig' %}
 			{% block body %}
 			{% endblock %}
 		</body>

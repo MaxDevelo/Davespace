@@ -5,12 +5,32 @@
 {% endblock %}
 
 {% block body %}
-	<div class="flex p-3">
-		<table class='ml-3'>
-			<tr>
-				<th>Name</th>
-				<td>{{survivor.name}}</td>
-			</tr>
-		</table>
+	<div class="flex flex-col w-full">
+		<div class="flex flex-row h-screen">
+			<div class="px-4 border-solid border-r-2 border-r-stone-50 border-opacity-20 md:border-opacity-20 py-10 w-full">
+				<h2 class="text-3xl text-white font-extrabold font-sans">My Survivor Status</h2>
+				{% set color_text = survivor.status == 'alive' ? 'text-green-500' : 'text-orange-400' %}
+				<div class="mx-6 my-6 bg-stone-700 {{color_text}} rounded-3xl w-fit pr-14 pl-4 py-1 font-medium text-1xl">
+					<span>🞄</span>
+					{{survivor.status|title}}
+				</div>
+				<div>
+					<h3 class="mx-10 text-white text-2xl font-sans py-6">Name: {{survivor.name}}</h1>
+					<table class="w-full">
+						<tr>
+							<th class="text-start text-white md:opacity-30 text-lg">Age</th>
+							<th class="text-start text-white md:opacity-30 text-lg">Genre</th>
+						</tr>
+						<tr>
+							<td class="text-start text-white text-lg">{{survivor.age}}</td>
+							<td class="text-start text-white text-lg">{{survivor.genre|upper}}</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="px-4 border-solid border-l-1 py-10 w-full">
+				<h2 class="text-3xl mx-auto my-0 text-white font-extrabold font-sans">Survivors Details</h2>
+			</div>
+		</div>
 	</div>
 {% endblock %}
