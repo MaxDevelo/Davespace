@@ -6,18 +6,25 @@ namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
  * @Controller: MainController
  */
-class MainController
+class MainController extends AbstractController
 {
+    const TITLE_HOMEPAGE = 'davespace';
+
     /**
      * homepage.
      */
     #[Route('/')]
     public function homepage(): Response
     {
-        return new Response('<h1>Hello, World !</h1>');
+        return $this->render('pages/home.html.twig', 
+        [
+            'title' => self::TITLE_HOMEPAGE
+        ]
+    );
     }
 }
