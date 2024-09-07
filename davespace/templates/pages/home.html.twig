@@ -17,7 +17,9 @@
 	  <tbody>
 		{% for article in articles %}
 		  <tr>
-			<td>{{article.title}}</td>
+			<td>
+			<a href="{{ path('app_article_show',{id: article.id})}}">{{article.title}}</a>
+			</td>
 			<td>{{article.description}}</td>
 			<td>{{article.date}}</td>
 		  </tr>	

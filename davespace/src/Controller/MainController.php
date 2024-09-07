@@ -19,7 +19,7 @@ class MainController extends AbstractController
     /**
      * homepage.
      */
-    #[Route('/')]
+    #[Route('/', name: 'homepage')]
     public function homepage(ArticlesRepository $articlesRepository): Response
     {
         $articles = $articlesRepository->findAll();
