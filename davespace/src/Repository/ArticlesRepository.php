@@ -18,12 +18,14 @@ class ArticlesRepository
                 'The Wall',
                 'This is just a Wall L O L',
                 (new \DateTime())->format('Y-m-d'),
+                'images/the-wall.jpeg'
             ),
             new Article(
                 2,
                 'The Wall 2',
                 'This is just a Wall L O L',
                 (new \DateTime())->format('Y-m-d'),
+                'images/the-wall.jpeg'
             ),
         ];
 

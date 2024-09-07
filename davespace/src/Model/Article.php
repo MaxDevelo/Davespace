@@ -16,9 +16,10 @@ class Article
         private string $title,
         private string $description,
         private string $date,
+        private string $imageUrl
     ) {
     }
-    
+
     /**
      * @return int
      */
@@ -26,7 +27,7 @@ class Article
     {
         return $this->id;
     }
-    
+
     /**
      * @return string
      */
@@ -34,7 +35,7 @@ class Article
     {
         return $this->title;
     }
-    
+
     /**
      * @return string
      */
@@ -42,12 +43,20 @@ class Article
     {
         return $this->description;
     }
-    
+
     /**
      * @return string
      */
     public function getDate(): string
     {
         return $this->date;
+    }
+
+    /**
+     * @return string
+     */
+    public function getImageUrl(): string
+    {
+        return $this->imageUrl;
     }
 }

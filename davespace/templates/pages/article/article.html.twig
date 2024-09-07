@@ -5,18 +5,21 @@
 {% endblock %}
 
 {% block body %}
-	<table>
-		<tr>
-			<th>Title</th>
-			<td>{{article.title}}</td>
-		</tr>
-		<tr>
-			<th>Description</th>
-			<td>{{article.description}}</td>
-		</tr>
-		<tr>
-			<th>Date</th>
-			<td>{{article.date}}</td>
-		</tr>
-	</table>
+	<div style='display:flex;'>
+		<img src="{{ asset(article.imageUrl) }}"/>
+		<table style='margin-left: 10px;'>
+			<tr>
+				<th>Title</th>
+				<td>{{article.title}}</td>
+			</tr>
+			<tr>
+				<th>Description</th>
+				<td>{{article.description}}</td>
+			</tr>
+			<tr>
+				<th>Date</th>
+				<td>{{article.date}}</td>
+			</tr>
+		</table>
+	</div>
 {% endblock %}
