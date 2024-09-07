@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use App\Repository\ArticlesRepository;
+use App\Repository\SurvivorsRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -14,19 +14,19 @@ use Symfony\Component\Routing\Attribute\Route;
  */
 class MainController extends AbstractController
 {
-    public const TITLE_HOMEPAGE = 'davespace';
+    public const TITLE_HOMEPAGE = 'the walking dead';
 
     /**
      * homepage.
      */
     #[Route('/', name: 'homepage')]
-    public function homepage(ArticlesRepository $articlesRepository): Response
+    public function homepage(SurvivorsRepository $survivorsRepository): Response
     {
-        $articles = $articlesRepository->findAll();
+        $survivors = $survivorsRepository->findAll();
         return $this->render('pages/home.html.twig',
             [
                 'title' => self::TITLE_HOMEPAGE,
-                'articles' => $articles
+                'survivors' => $survivors
             ]
         );
     }
